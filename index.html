@@ -47,13 +47,13 @@
 	</div>
 </header>
 	
-<nav id="menu" class="mobile-nav mnav">
+<nav onclick="toggleMenu()" id="menu" class="mobile-nav mnav">
 
-	<button onclick="toggleMenu()" aria-label="Close mobile navigation" class="mnav-close">
+	<button aria-label="Close mobile navigation" class="mnav-close">
 		<img src="https://888starzcasino.pl/templates/888starz/img/header/close.svg" alt="icon close" loading="lazy" width="30" height="30">
 	</button>
 
-	<div class="mnav-inner">
+	<div onclick="stopPropagation(event)" class="mnav-inner">
 		<div class="mnav-logo">
 			<a href="">
 				<img src="https://cdn.prod-mwl.com/mwl/banzai/logos/8c837a5e21df861612f9ede8067801bf.svg?q=75" alt="Banzai logo" loading="lazy" width="100" height="80">
@@ -505,6 +505,10 @@ function navToggle(){
 
 function toggleMenu(){
 	document.getElementById('menu').classList.toggle('_active');
+}
+
+function stopPropagation(e) {
+  e.stopPropagation();
 }
 
 function toggleFAQ(event){
